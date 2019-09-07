@@ -1,5 +1,6 @@
 <script>
   import cartItems from './cart-store.js';
+  import { products } from '../Products/products-store.js';
   import Button from "../UI/Button.svelte";
 
   export let title;
@@ -10,6 +11,10 @@
 
   function displayDescription() {
     showDescription = !showDescription;
+    const unsubscribe = products.subscribe(prods => {
+      description = prods.find(p => p.id === id).description;
+    })
+    unsubscribe();
   }
 
   function removeFromCart() {
