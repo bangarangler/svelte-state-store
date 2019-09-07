@@ -1,5 +1,5 @@
 <script>
-  import { onDestroy } from 'svelte';
+  /*import { onDestroy } from 'svelte';*/
   import cartItems from './cart-store.js';
   import CartItem from "./CartItem.svelte";
 
